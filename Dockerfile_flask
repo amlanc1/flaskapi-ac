@@ -11,4 +11,4 @@ WORKDIR /home/flaskapp
 COPY $PWD/flask_app /home/flaskapp
 RUN pip3 install -r requirements.txt
 # CMD ["flask", "run", "--host", "0.0.0.0"]
-CMD ["gunicorn","--bind 0.0.0.0:5000","wsgi:app"]
+CMD ["gunicorn --bind 0.0.0.0:5000 wsgi:app"]
