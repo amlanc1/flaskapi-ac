@@ -1,6 +1,16 @@
 version: '3.1'
 
 services: 
+  mongo: 
+    image: mongo
+    restart: always
+    expose:
+      - "27017"
+    networks:
+      - apinet
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: mypassword
   web:
     build:
       context: .
@@ -15,6 +25,8 @@ services:
       dockerfile: Dockerfile_flask
     expose:
       - "5000"
+    environment: 
+      MONGO_URL: mongodb://root:mypassword@mongo:27017/usersdb
     networks:
       - apinet
 

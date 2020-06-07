@@ -3,8 +3,8 @@ from flask_pymongo import PyMongo
 import os
 
 app = Flask(__name__)
-# app.config["MONGO_URI"] = os.getenv('MONGO_URL')
-# mongo = PyMongo(app)
+app.config["MONGO_URI"] = os.getenv('MONGO_URL')
+mongo = PyMongo(app)
 
 @app.route("/")
 def home_page():
