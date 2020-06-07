@@ -28,7 +28,7 @@ services:
     expose:
       - "5000"
     environment: 
-      MONGO_URL: mongodb://root:mypassword@mongo:27017/local
+      MONGO_URL: mongodb://root:mypassword@mongo:27017/admin
     networks:
       - apinet
 
