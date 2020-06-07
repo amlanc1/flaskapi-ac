@@ -6,6 +6,8 @@ services:
     restart: always
     expose:
       - "27017"
+    ports: 
+      - "4505:27017"
     networks:
       - apinet
     environment:

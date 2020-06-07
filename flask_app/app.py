@@ -8,13 +8,13 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def home_page():
-    # all_users = mongo.db.users.find()
-    # users=[]
-    # for rw in all_users:
-    #     rw.pop('_id')
-    #     users.append(rw)
-    # print(users)
-    # resp=make_response(jsonify(users),200)
+    all_users = mongo.db.users.find()
+    users=[]
+    for rw in all_users:
+        rw.pop('_id')
+        users.append(rw)
+    print(users)
+    resp=make_response(jsonify(users),200)
     resp=make_response(jsonify(status='done'),200)
     return resp
 
