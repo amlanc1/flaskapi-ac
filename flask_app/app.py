@@ -15,7 +15,7 @@ def home_page():
         users.append(rw)
     print(users)
     resp=make_response(jsonify(users),200)
-    resp=make_response(jsonify(status='done'),200)
+    # resp=make_response(jsonify(status='done'),200)
     return resp
 
 if __name__=='__main__':
